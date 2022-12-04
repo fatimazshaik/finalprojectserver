@@ -28,7 +28,6 @@ Json::Value finalMotorcycleServer::alert(const std::string& action, const std::s
 
 }
 
-
 int main()
 {
     Json::Value myv;
@@ -55,3 +54,4 @@ int main()
     return 0;
 
 }
+
