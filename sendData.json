@@ -1,0 +1,13 @@
+[{
+  "name": "sendData",
+  "params": {
+    "action": "send data",
+    "class_id": "class name",
+    "object_id": "object id",
+    "number": 0
+  },
+  "returns": {
+    "action": "response",
+    "response": "jsonstr"
+  }
+}]

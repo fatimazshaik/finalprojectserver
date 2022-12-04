@@ -1,0 +1,12 @@
+[{
+  "name": "alert",
+  "params": {
+    "action": "alert object",
+    "class_id": "class name",
+    "object_id": "object id"
+  },
+  "returns": {
+    "action": "response",
+    "response": "jsonstr"
+  }
+}]
