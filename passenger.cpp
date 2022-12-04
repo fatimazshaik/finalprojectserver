@@ -9,7 +9,7 @@ Passenger(){
     dangerPoints = 0;
 }
 
-Passenger(string name){
+Passenger(std::string name){
     dangerPoints = 0;
     this->name = name;
 }
