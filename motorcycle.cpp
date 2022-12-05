@@ -28,13 +28,17 @@ Json::Value finalMotorcycleServer::alert(const std::string& action, const std::s
 
 }
 
+
 int main()
 {
     Json::Value myv;
     int lm = 1;
+    int rm = 2;
     //Set up client to car server:
     HttpClient lefthttpclient("http://127.0.0.1:7374");
     carClient leftMotorcycle(lefthttpclient, JSONRPC_CLIENT_V2);
+    HttpClient righthttpclient("http://127.0.0.1:7374");
+    carClient rightMotorcycle(righthttpclient, JSONRPC_CLIENT_V2);
     //Send number to car:
     try{
         myv = leftMotorcycle.sendData("send data", "motorcycle", lm, "leftmotorcycle");
@@ -43,9 +47,7 @@ int main()
         cerr << e.what() << endl;
     }
     cout << myv.toStyledString() << endl;
-    //TODO: Set up server of lm to car:
     HttpServer httpserver(7375);
-    cout << "Server started" << endl;
     finalMotorcycleServer motorcycleLeftServer(httpserver, JSONRPC_SERVER_V1V2); // hybrid server (json-rpc 1.0 & 2.0)
     motorcycleLeftServer.StartListening();
     cout << "Hit enter to stop the server" << endl;

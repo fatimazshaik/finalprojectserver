@@ -10,7 +10,7 @@
 using namespace jsonrpc;
 using namespace std;
 
-/*class finalMotorcycleServer : public motorcycleServer {
+class finalMotorcycleServer : public motorcycleServer {
 public:
     //header
     finalMotorcycleServer(AbstractServerConnector &connector, serverVersion_t type);
@@ -19,20 +19,18 @@ public:
 //constructor
 finalMotorcycleServer:: finalMotorcycleServer(jsonrpc::AbstractServerConnector &connector, jsonrpc::serverVersion_t type) : motorcycleServer(connector, type) {
 }
-
 //functions
 Json::Value finalMotorcycleServer::alert(const std::string& action, const std::string& class_id, const std::string& object_id){
     Json::Value result;
     result["status"] = "successful";
     return result;
-
-}*/
+}
 
 
 int main()
 {
     Json::Value myv;
-    int rm = 2;
+    int rm = 5;
     //Set up client to car server:
     HttpClient righthttpclient("http://127.0.0.1:7374");
     carClient rightMotorcycle(righthttpclient, JSONRPC_CLIENT_V2);
@@ -44,13 +42,13 @@ int main()
         cerr << e.what() << endl;
     }
     cout << myv.toStyledString() << endl;
-    /*HttpServer httpserver(7375);
+    HttpServer httpserver(7376);
     cout << "Server started" << endl;
-    finalMotorcycleServer motorcycleLeftServer(httpserver, JSONRPC_SERVER_V1V2); // hybrid server (json-rpc 1.0 & 2.0)
-    motorcycleLeftServer.StartListening();
+    finalMotorcycleServer motorcycleRightServer(httpserver, JSONRPC_SERVER_V1V2); // hybrid server (json-rpc 1.0 & 2.0)
+    motorcycleRightServer.StartListening();
     cout << "Hit enter to stop the server" << endl;
     getchar();
-    motorcycleLeftServer.StopListening();*/
+    motorcycleRightServer.StopListening();
     return 0;
 
 }

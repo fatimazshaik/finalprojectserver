@@ -1,11 +1,10 @@
 CC = g++ --std=c++17
 CFLAGS = -I/opt/homebrew/include -g
 
-LDFLAGS = -L/usr/include/jsoncpp -ljsoncpp -lmicrohttpd -ljsonrpccpp-common -ljsonrpccpp-server -ljsonrpccpp-client -lcurl
+LDFLAGS = -L/opt/homebrew/lib/ -ljsoncpp -lmicrohttpd -ljsonrpccpp-common -ljsonrpccpp-server -ljsonrpccpp-client -lcurl
 
 INC_CL = carClient.h carServer.h motorcycleServer.h motorcycleClient.h
 OBJ	= car.o motorcycle.o
-
 all: 	car motorcycle motorcycleR
 
 carserver.h carclient.h:		sendData.json
