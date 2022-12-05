@@ -4,23 +4,32 @@
 
 #include "Dog.h"
 
-Dog() : Passenger() {
+Dog::Dog() {
+    this->dangerPoints = 0;
 }
 
-Dog(std::string name) : Passenger(std::string name) {
+/*Dog(std::string name) : Passenger(name) {
 
+}*/
+Dog::Dog(std::string name) : Passenger(name) {
+    this->dangerPoints = 0;
 }
 
 
-void setEndangered(bool endangered){
+
+void Dog::setEndangered(bool endangered){
     this->isEndangered = endangered;
 }
 
-bool getIsEndangered(){
+bool Dog::getIsEndangered(){
     return this->isEndangered;
 }
 
-void setDangerPoints(){
+int Dog::getDangerPoints() {
+    return this->dangerPoints;
+}
+
+void Dog::setDangerPoints(){
     // Sets danger points based on passenger type
     this->dangerPoints = 30;
     if(this->isEndangered) {
