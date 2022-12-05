@@ -4,20 +4,24 @@
 
 #include "Person.h"
 
-Person() : Passenger() {
+Person::Person() {
+    this->dangerPoints = 0;
 }
 
-Person(std::string name) : Passenger(std::string name) {
+/*Person(std::string name) : Passenger(std::string name) {
+}*/
+Person::Person(std::string name) : Passenger(name) {
+    this->dangerPoints = 0;
 }
 
-void setPassengerAge(int age){
-    this->passengerAge = age;
+void Person::setPassengerAge(int age){
+    this->passAge = age;
 }
-int getPassengerAge(){
-    this->passengerAge;
+int Person::getPassengerAge(){
+    return this->passAge;
 }
 
-void setDangerPoints(){
+void Person::setDangerPoints(){
     // Sets danger points based on passenger type
     this->dangerPoints = 50;
     if (this->passAge <= 5 || this->passAge >= 74){
