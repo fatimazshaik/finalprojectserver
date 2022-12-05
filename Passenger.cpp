@@ -2,16 +2,17 @@
 // Created by Teni on 12/4/2022.
 //
 
-#include "passenger.h"
+#include "Passenger.h"
 
 //Default Constructor
-Passenger(){
-    dangerPoints = 0;
+
+Passenger::Passenger(std::string name){
+    this->dangerPoints = 0;
+    this->name = name;
 }
 
-Passenger(std::string name){
-    dangerPoints = 0;
-    this->name = name;
+Passenger::Passenger(){
+    this->dangerPoints = 0;
 }
 
 void setPassengerName(std::string name) {
