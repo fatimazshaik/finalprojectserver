@@ -20,6 +20,9 @@ void Person::setPassengerAge(int age){
 int Person::getPassengerAge(){
     return this->passAge;
 }
+int Person::getDangerPoints() {
+    return this->dangerPoints;
+}
 
 void Person::setDangerPoints(){
     // Sets danger points based on passenger type
