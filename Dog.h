@@ -8,13 +8,18 @@
 #include "Passenger.h"
 
 class Dog : public Passenger {
+private:
+    int dangerPoints;
 public:
     bool isEndangered;
-
+    Dog::Dog(std::string name);
+    //Dog::Dog(std::string name) : Passenger(name);
+    Dog::Dog();
     void setEndangered(bool endangered);
     bool getIsEndangered();
 
     void setDangerPoints();
+    int getDangerPoints();
 };
 
 
