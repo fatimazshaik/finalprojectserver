@@ -7,9 +7,13 @@
 
 #include "Passenger.h"
 
-class Person :: public Passenger {
+class Person : public Passenger {
+private:
+    int dangerPoints;
 public:
-    int passAge
+    int passAge;
+    Person::Person(std::string name);
+    Person::Person();
     void setPassengerAge(int age);
     int getPassengerAge();
 
