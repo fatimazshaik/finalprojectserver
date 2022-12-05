@@ -15,12 +15,19 @@
 #include <iomanip>
 #include <cstdlib>
 #include <sstream>
+#include <json/json.h>
+#include <json/reader.h>
+#include <json/writer.h>
+#include <json/value.h>
 
 
-class passenger {
+class Passenger {
+private: 
     std::string name;
     int dangerPoints;
-
+public:
+    Passenger();
+    Passenger(std::string);
     void setPassengerName(std::string);
     std::string getPassengerName();
 
