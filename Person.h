@@ -18,6 +18,7 @@ public:
     int getPassengerAge();
 
     void setDangerPoints();
+    int getDangerPoints();
 };
 
 
